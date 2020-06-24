@@ -2,7 +2,8 @@ def substrings(string, dictionary)
   hash = Hash.new(0)
   dictionary.each do |term|
     if string.downcase.include?(term.downcase)
-      hash[term] += 1
+      occurences = string.downcase.scan(term.downcase).length
+      hash[term] += occurences
     end
   end
   hash
